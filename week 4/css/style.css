@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: #007BFF;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav {
+    background: #333;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.toggle-button {
+    display: none; /* Hidden by default */
+}
+
+.hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Horizontal list */
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Increased padding for better touch targets */
+    transition: background 0.3s;
+}
+
+.nav-list li a:hover {
+    background: #0056b3; /* Darker background on hover */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    gap: 1rem; /* Space between main and sidebar */
+}
+
+main {
+    flex: 2; /* Takes up twice as much space as the sidebar */
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+    flex: 1; /* Takes up one space */
+    padding: 1rem;
+    background: #e2e2e2;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #007BFF;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide the list by default */
+        flex-direction: column; /* Stack items */
+        width: 100%; /* Full width */
+        position: absolute; /* Position it on top */
+        background: #333; /* Background color for dropdown */
+        left: 0;
+        top: 60px; /* Adjust based on header height */
+        z-index: 10; /* Ensure it’s on top */
+    }
+
+    .toggle-button:checked + .hamburger + .nav-list {
+        display: flex; /* Show when checked */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger menu on mobile */
+    }
+
+    .nav-list li {
+        margin: 0.5rem 0; /* Adjust margin for vertical layout */
+        text-align: center; /* Center the text */
+    }
+
+    .container {
+        flex-direction: column; /* Stack main and sidebar on smaller screens */
+    }
+
+    main, aside {
+        flex: 1; /* Both take equal space */
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        font-size: 0.9rem;
+    }
+
+    main, aside {
+        padding: 0.5rem;
+    }
+
+    .social-media a {
+        display: block; /* Stack social media links vertically */
+        margin: 0.5rem 0;
+    }
+}
