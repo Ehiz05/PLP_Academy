@@ -1,22 +1,67 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Validation</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
 
-        <head>
-    
-            <title>Introduction to Javascript</title>
-            <!-- 3. external javascript file -->
-            
-            <!-- 2. internal javascript -->
-            <script>
-            ///javascript code here
-            </script>
-        </head>
+<div class="form-container">
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <div class="error" id="email-error"></div>
 
-        <body>
-            <!-- inline javascript -->
-            <button id="btn">Click Me!</button>
-            <script src="script.js"></script>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <div class="error" id="password-error"></div>
 
-        </body>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+        <div class="error" id="confirm-password-error"></div>
 
-    </html>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+        <div class="error" id="age-error"></div>
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="Other" required>
+            <label for="other">Other</label>
+        </div>
+        <div class="error" id="gender-error"></div>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="">-- Select Country --</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="IN">India</option>
+            <option value="CA">Canada</option>
+        </select>
+        <div class="error" id="country-error"></div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions</label>
+        </div>
+        <div class="error" id="terms-error"></div>
+
+        <button type="submit">Register</button>
+
+        <div class="error" id="form-error"></div>
+    </form>
+</div>
+
+<script src="scripts.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
