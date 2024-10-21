@@ -1,23 +1,24 @@
-const mysql = require('mysql2');
+//import package
+const mysql = require('mysql2')
 
-
+//create connection to DBMS
 const db = mysql.createConnection({
     host: 'localhost',
-    port: 3306,
+    port: '3306',
     user: 'root',
-    password: 'shyne2Kay_0580',
+    password: '',
     database: 'node_crud'
-});
+})
 
-// connect to the db
-db.connect( (error) => {
-    if(error){
-        console.log('There was an error connection to DB', error.stack)
+//connect
+db.connect( (err) => {
+    if(err){
+        console.log('Error connecting to DB: ', err.stack)
         return;
     }
 
-    console.log('Successfully connected to DB');
-});
+    console.log('Successfully connected to DB')
+})
 
-// export the db connection
-module.exports = db;
+//export the connection
+module.exports = db
